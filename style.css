@@ -189,7 +189,7 @@ header {
     display: inline;
     margin: 0 auto;
     padding: 10px;
-    overflow: hidden;
+    overflow: none;
     padding: 4%;
     max-width: 1000vw;
     max-height: 100vh;
