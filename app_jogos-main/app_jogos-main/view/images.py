@@ -10,8 +10,9 @@ class CarregaImagens:
         self.largura_padrao = 120
         self.image = Image.open(self.url_img).resize((self.largura_padrao, self.altura_padrao))
         self.photo = ImageTk.PhotoImage(self.image)
-        self.aparecer_imagem()
     
     
-    def aparecer_imagem(self):
+    def aparecer_imagem(self, linha, coluna):
         self.carrega_img = LabelImage(self.root, self.photo)
+        self.carrega_img.grid(row=linha, column=coluna)
+        

@@ -1,6 +1,7 @@
 from tkinter import ttk
 import tkinter as tk
 from elementos_tkinter import Buttoncustomizado, Framecustomizado, Labelcustomizada, LabelcustomizadaTitulo, Mensagens
+from images import CarregaImagens
 class Header:
     pass
 
@@ -16,6 +17,8 @@ class Body:
     def card_frame(self):
         self.card = Framecustomizado(self.container_frame, width=200, height=300, bg='blue')
         self.card.grid(row=0, column=0)
+        self.img = CarregaImagens("imagens/bloons.jpg", self.card)
+        self.img.aparecer_imagem(0,0)
         
     
     
