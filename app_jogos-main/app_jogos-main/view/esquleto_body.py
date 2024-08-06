@@ -13,17 +13,13 @@ class CardFrame:
 class Body:
     def __init__(self, root):
         self.root = root
-        self.container_frame = Framecustomizado(self.root, bg='red', width=600, height=600)
-        self.container_frame.grid_propagate(False)
-        self.container_frame.grid(row=0, column=0)
-        self.card_frame()
+        self.card_()
         
         
-    def card_frame(self):
-        CardFrame(self.container_frame, 0, 0)
-        CardFrame(self.container_frame, 0, 1)
-        CardFrame(self.container_frame, 0, 2)
-        pass
+    def card_(self):
+        for x in range(6):
+             CardFrame(self.root, 0, x)
+        
     
         
     
