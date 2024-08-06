@@ -10,10 +10,11 @@ class Body:
         self.container_frame = Framecustomizado(self.root, bg='red', width=600, height=600)
         self.container_frame.grid_propagate(False)
         self.container_frame.grid(row=0, column=0)
+        self.card_frame()
         
         
     def card_frame(self):
-        self.card = Framecustomizado(self.container_frame)
+        self.card = Framecustomizado(self.container_frame, width=200, height=300, bg='blue')
         self.card.grid(row=0, column=0)
         
     
@@ -24,8 +25,14 @@ class App:
         self.body()
     
     def body(self):
+        self.body = Body(self.root)
         pass
-        
+    
+
+
+root=  tk.Tk()
+app = App(root)
+root.mainloop()
         
         
     
