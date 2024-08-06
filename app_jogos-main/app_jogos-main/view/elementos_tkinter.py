@@ -60,6 +60,9 @@ def Textcustomizado(master, **args):
 
 def Entrycustomizado(master, **args):
   return tk.Entry(master, borderwidth=1, relief=tk.SOLID,**args)
+
+def LabelImage(master, img, **args):
+  return tk.Label(master,image=img, **args)
                     
                     
 
