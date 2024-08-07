@@ -56,7 +56,7 @@ class Container:
         
     def card_(self):
         self.card = Card(self.canvas_box, 0, 0, 'C:/Users/182400253/Downloads/Mateus da silva dorvis/oi/oi/app_jogos-main/app_jogos-main/imagens/terra.jpg', 'Terra')
-        self.card2 = Card(self.canvas_box, 0, 1, 'C:/Users/182400253/Downloads/Mateus da silva dorvis/oi/oi/app_jogos-main/app_jogos-main/imagens/sonic.jpg', 'Terra')
+        self.card2 = Card(self.canvas_box, 0, 1, 'C:/Users/182400253/Downloads/Mateus da silva dorvis/oi/oi/app_jogos-main/app_jogos-main/imagens/sonic.jpg', 'Sonic')
         
         
     
