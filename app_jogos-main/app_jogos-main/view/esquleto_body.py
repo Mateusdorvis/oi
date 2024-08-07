@@ -23,17 +23,21 @@ class CarregaImagens:
 
 
 class Card:
-    def __init__(self, root, linha_card, coluna_card):
+    def __init__(self, root, linha_card, coluna_card, img_card):
         self.root = root
+        self.img_card = img_card
         self.card_box = Canvaspersonalizado(self.root, width=200, height=300, bg='blue')
+        self.card_box.grid_propagate(False)
         self.card_box.grid(row=linha_card, column=coluna_card, pady=5, padx=5)
+       
+        self.img_()
     
         
     
     #metodos de card:
-    def img_card(self):
-        self.img = CarregaImagens('C:/Users/182400253/Downloads/Mateus da silva dorvis/oi/oi/app_jogos-main/app_jogos-main/imagens/sonic.jpg', self.card_box)
-        self.img.aparecer_imagem(0, 0)
+    def img_(self):
+        self.img = CarregaImagens(self.img_card, self.card_box)
+        self.img.aparecer_imagem()
     
         
         
@@ -47,7 +51,10 @@ class Container:
         
         
     def card_(self):
-        self.card = Card(self.canvas_box, 0, 0)
+        self.card = Card(self.canvas_box, 0, 0, 'C:/Users/182400253/Downloads/Mateus da silva dorvis/oi/oi/app_jogos-main/app_jogos-main/imagens/terra.jpg')
+        
+        
+    
 
         
     
@@ -61,6 +68,7 @@ class App:
     
     def box(self):
         self.container = Container(self.root)
+        
         
     
 
