@@ -1,24 +1,54 @@
 from tkinter import ttk
 import tkinter as tk
-from elementos_tkinter import Buttoncustomizado, Framecustomizado, Labelcustomizada, LabelcustomizadaTitulo, Mensagens
+from elementos_tkinter import Buttoncustomizado, Framecustomizado, Labelcustomizada, LabelcustomizadaTitulo, Mensagens, Canvaspersonalizado
+from PIL import Image, ImageTk
+class CarregaImagens:
+    def __init__(self, url_img, root):
+        self.url_img = url_img
+        self.root = root
+        self.altura_padrao = 200
+        self.largura_padrao = 200
+        self.image = Image.open(self.url_img).resize((self.largura_padrao, self.altura_padrao))
+        self.photo = ImageTk.PhotoImage(self.image)
+    
+    
+    def aparecer_imagem(self):
+        self.carrega_img = tk.Label(self.root, image=self.photo, bg='blue')
+        self.carrega_img.image = self.photo
+        self.carrega_img.grid(row=0, column=0)
+        
 
-class Header:
-    pass
+        
 
-class CardFrame:
-    def __init__(self, frame, linha_card, coluna_card):
-        self.frame = frame
-        self.card_box = Framecustomizado(self.frame, width=200, height=300, bg='blue')
+
+
+class Card:
+    def __init__(self, root, linha_card, coluna_card):
+        self.root = root
+        self.card_box = Canvaspersonalizado(self.root, width=200, height=300, bg='blue')
         self.card_box.grid(row=linha_card, column=coluna_card, pady=5, padx=5)
-class Body:
+    
+        
+    
+    #metodos de card:
+    def img_card(self):
+        self.img = CarregaImagens('C:/Users/182400253/Downloads/Mateus da silva dorvis/oi/oi/app_jogos-main/app_jogos-main/imagens/sonic.jpg', self.card_box)
+        self.img.aparecer_imagem(0, 0)
+    
+        
+        
+class Container:
     def __init__(self, root):
         self.root = root
+        self.canvas_box = Canvaspersonalizado(self.root, width=1000, height=320, bg='green')
+        self.canvas_box.grid_propagate(False)
+        self.canvas_box.grid(row=1, column=0)
         self.card_()
         
         
     def card_(self):
-        for x in range(6):
-             CardFrame(self.root, 0, x)
+        self.card = Card(self.canvas_box, 0, 0)
+
         
     
         
@@ -27,11 +57,11 @@ class Body:
 class App:
     def __init__(self, root):
         self.root = root
-        self.body()
+        self.box()
     
-    def body(self):
-        self.body = Body(self.root)
-        pass
+    def box(self):
+        self.container = Container(self.root)
+        
     
 
 
