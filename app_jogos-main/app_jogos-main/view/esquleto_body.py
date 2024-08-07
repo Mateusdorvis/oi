@@ -23,12 +23,16 @@ class CarregaImagens:
 
 
 class Card:
-    def __init__(self, root, linha_card, coluna_card, img_card):
+    def __init__(self, root, linha_card, coluna_card, img_card, nome_card):
         self.root = root
         self.img_card = img_card
+        self.nome_card = nome_card
         self.card_box = Canvaspersonalizado(self.root, width=200, height=300, bg='blue')
         self.card_box.grid_propagate(False)
         self.card_box.grid(row=linha_card, column=coluna_card, pady=5, padx=5)
+        
+        self.card_title = Labelcustomizada(self.card_box, bg='blue', fg='white', text=self.nome_card)
+        self.card_title.grid(row=1, column=0)
        
         self.img_()
     
@@ -51,8 +55,8 @@ class Container:
         
         
     def card_(self):
-        self.card = Card(self.canvas_box, 0, 0, 'C:/Users/182400253/Downloads/Mateus da silva dorvis/oi/oi/app_jogos-main/app_jogos-main/imagens/terra.jpg')
-        self.card2 = Card(self.canvas_box, 0, 1, 'C:/Users/182400253/Downloads/Mateus da silva dorvis/oi/oi/app_jogos-main/app_jogos-main/imagens/terra.jpg')
+        self.card = Card(self.canvas_box, 0, 0, 'C:/Users/182400253/Downloads/Mateus da silva dorvis/oi/oi/app_jogos-main/app_jogos-main/imagens/terra.jpg', 'Terra')
+        self.card2 = Card(self.canvas_box, 0, 1, 'C:/Users/182400253/Downloads/Mateus da silva dorvis/oi/oi/app_jogos-main/app_jogos-main/imagens/sonic.jpg', 'Terra')
         
         
     
